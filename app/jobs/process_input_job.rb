@@ -38,7 +38,7 @@ class ProcessInputJob < ApplicationJob
         elsif line.include? (",")        
           objects = line.split(",")
         end
-        unless objects.empty? or objects.count != 7
+        unless objects.empty? or objects.count < 7
           begin 
             time = objects[0][0..18] + ".0Z"
             time = time.to_time
