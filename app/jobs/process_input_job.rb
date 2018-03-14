@@ -40,7 +40,7 @@ class ProcessInputJob < ApplicationJob
         end
         unless objects.empty? or objects.count < 7
           begin 
-            time = objects[0][0..18] + ".0Z"
+            time = objects[0]
             time = time.to_time
           rescue ArgumentError 
             next
